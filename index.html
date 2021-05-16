@@ -2,13 +2,13 @@
 <html>
 
 	<head>
-		<title>Vector Script GUI</title>
+		<title>Web-spa calculator</title>
 		<link rel="stylesheet" type="text/css" href="style.css">	
 	</head>
 
 	<body>
 		<header>
-			<h1 class = "Main-heading">Easy equation solving!</h1>
+			<h1 class = "Main-heading">Web-calculation</h1>
 		</header>
 			<form id = "equation_form" method="POST" action="#">
 				<textarea id="equation_text" name="equation"></textarea>
@@ -16,30 +16,46 @@
 			</form>
 		
 		<div id="Buttons">
-			<div id="pridaj_tvar">
-				<p id="Heading_buttons">Symbols</p>
-				<div id="tvary">
-					<table>
-						<tr>
-							<td><button class="animate" id="x" title="Rectangle">X</button></td>
-							<td><button class="animate" id="y" title="Filled Rectangle">Y</button></td>
-							<td><button class="animate" id="z" title="Circle">Z</button></td>
-						</tr>							
-						<tr>
-							<td><button class="animate" id="2_power" title="Filled Circle">**2</button></td>
-							<td><button class="animate" id="plus" title="Triangle">+</button></td>
-							<td><button class="animate" id="minus" title="Filled Triangle">-</button></td>
-						</tr>
-						<tr>
-							<td><button class="animate" id="divide" title="Line">:</button></td>
-							<td><button class="animate" id="multiply" title="Undo">*</button></td>
-							<td><button class="animate" id="equal" title="Undo">=</button></td>
-						</tr>
-					</table>
-				</div>
+			<p id="Heading_buttons">Symbols</p>
+				<table>
+					<tr>
+						<td><button class="animate" id="x" title="Rectangle">X</button></td>
+						<td><button class="animate" id="y" title="Filled Rectangle">Y</button></td>
+						<td><button class="animate" id="z" title="Circle">Z</button></td>
+
+						<td><button class="animate" id="0" title="Rectangle">0</button></td>
+						<td><button class="animate" id="1" title="Rectangle">1</button></td>
+						<td><button class="animate" id="2" title="Rectangle">2</button></td>
+						<td><button class="animate" id="3" title="Rectangle">3</button></td>
+					</tr>							
+					<tr>
+						<td><button class="animate" id="2_power" title="Filled Circle">**2</button></td>
+						<td><button class="animate" id="plus" title="Triangle">+</button></td>
+						<td><button class="animate" id="minus" title="Filled Triangle">-</button></td>
+
+						<td><button class="animate" id="4" title="Rectangle">4</button></td>
+						<td><button class="animate" id="5" title="Rectangle">5</button></td>
+						<td><button class="animate" id="6" title="Rectangle">6</button></td>
+						<td><button class="animate" id="7" title="Rectangle">7</button></td>
+					</tr>
+					<tr>
+						<td><button class="animate" id="divide" title="Line">:</button></td>
+						<td><button class="animate" id="multiply" title="Undo">*</button></td>
+						<td><button class="animate" id="equal" title="Undo">=</button></td>
+
+						<td><button class="animate" id="8" title="Rectangle">8</button></td>
+						<td><button class="animate" id="9" title="Rectangle">9</button></td>
+						<td><button class="animate" id="(" title="Rectangle">(</button></td>
+						<td><button class="animate" id=")" title="Rectangle">)</button></td>
+					</tr>
+				</table>
 			</div>
 
-			<script type="text/javascript" src="script.js" ></script>
+		<footer>
+			<h1></h1>
+		</footer>
+
+		<script type="text/javascript" src="script.js" ></script>
 
 	</body>
 </html>
