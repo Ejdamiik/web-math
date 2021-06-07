@@ -3,17 +3,11 @@ function handleSubmit(e) {
 	e.preventDefault(); // zabrániť vstavenému odosielaniu v prehliadači
 
 	// this reprezentuje ten formular, ktory odosielame
-	console.log("Here1");
 	const equation = this.querySelector("#equation_text").value; // Načítame text z textarea
-	console.log("Here2");
-	const formular = new URLSearchParams(); // Vytvoríme štruktúru, ktorá bude reprezentovať formulár
-	formular.append('equation', equation); // Pridáme tam naše hodnoty
-	console.log("Here3");
 
 	const url = this.action; // Nacitame povodnu URL zadanu vo formulari
-	console.log("Here4");
 	const method = this.method; // NAcitame povodnu metodu zadanu vo formulari
-	fetch(url, {method: method, body: formular}) // Urobíme HTTP požiadavku na náš server POST /render a formularom v tele požiadavky 
+	fetch(url, {method: method, body: equation}) // Urobíme HTTP požiadavku na náš server POST /render a formularom v tele požiadavky 
 		.then((res) => res.blob()) // Dostali sme binárne dáta (blob)
 }
 
@@ -144,4 +138,4 @@ document.querySelector("#equal").addEventListener("click", pressed_equal);
 document.querySelector("#lp").addEventListener("click", pressed_left);
 document.querySelector("#rp").addEventListener("click", pressed_right);
 
-document.querySelector("#equation_form").addEventListener("submit", handleSubmit);
+document.querySelector("submit").addEventListener("submit", handleSubmit);
