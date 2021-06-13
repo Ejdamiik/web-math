@@ -8,48 +8,76 @@
 
 	<body>
 		<header>
-			<h1 class = "Main-heading">Web-calculation</h1>
+			<h1 class = "Main-heading">Linear equation system</h1>
 		</header>
-			<form id = "equation_form" method="POST" action="#equation">
-				<textarea id="equation_text" name="equation"></textarea>
-				<button class="button" id="submit">Solve!</button>
-			</form>
 		
-		<div id="Buttons">
-			<p id="Heading_buttons">Symbols</p>
+		<form id = "eq_system" method="POST" action="/solve">
 				<table>
 					<tr>
-						<td><button class="animate" id="x" title="x">X</button></td>
-						<td><button class="animate" id="y" title="y">Y</button></td>
-						<td><button class="animate" id="z" title="z">Z</button></td>
-
-						<td><button class="animate" id="zero" title="zero">0</button></td>
-						<td><button class="animate" id="one" title="one">1</button></td>
-						<td><button class="animate" id="two" title="two">2</button></td>
-						<td><button class="animate" id="three" title="three">3</button></td>
-					</tr>							
-					<tr>
-						<td><button class="animate" id="2_power" title="power 2">**2</button></td>
-						<td><button class="animate" id="plus" title="plus">+</button></td>
-						<td><button class="animate" id="minus" title="minus">-</button></td>
-
-						<td><button class="animate" id="four" title="four">4</button></td>
-						<td><button class="animate" id="five" title="five">5</button></td>
-						<td><button class="animate" id="six" title="six">6</button></td>
-						<td><button class="animate" id="seven" title="seven">7</button></td>
+						<td>							
+							<input class = "coeficients" id = "x1" name = "x1" type="text">
+							<label class = "labels">X</label>
+							<label class = "labels">+</label>
+						</td>
+						<td>
+							<input class = "coeficients" id = "y1" name = "y1" type="text">
+							<label class = "labels">Y</label>
+							<label class = "labels">+</label>
+						</td>
+						<td>
+							<input class = "coeficients" id = "z1" name = "z1" type="text">
+							<label class = "labels">Z</label>
+						</td>
+						<td>
+							<label class = "labels">=</label>
+							<input class = "coeficients" id = "r1" name = "r1" type="text">
+						</td>
 					</tr>
 					<tr>
-						<td><button class="animate" id="divide" title="divide">:</button></td>
-						<td><button class="animate" id="multiply" title="multiply">*</button></td>
-						<td><button class="animate" id="equal" title="equal">=</button></td>
-
-						<td><button class="animate" id="eight" title="eight">8</button></td>
-						<td><button class="animate" id="nine" title="nine">9</button></td>
-						<td><button class="animate" id="lp" title="left parenthesis">(</button></td>
-						<td><button class="animate" id="rp" title="right parenthesis">)</button></td>
+						<td>
+							<input class = "coeficients" id = "x2" name = "x2" type="text">
+							<label class = "labels">X</label>
+							<label class = "labels">+</label>
+						</td>
+						<td>
+							<input class = "coeficients" id = "y2" name = "y2" type="text">
+							<label class = "labels">Y</label>
+							<label class = "labels">+</label>
+						</td>
+						<td>
+							<input class = "coeficients" id = "z2" name = "z2" type="text">
+							<label class = "labels">Z</label>
+						</td>
+						<td>
+							<label class = "labels">=</label>
+							<input class = "coeficients" id = "r2" name = "r2" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class = "coeficients" id = "x3" name = "x3" type="text">
+							<label class = "labels">X</label>
+							<label class = "labels">+</label>
+						</td>
+						<td>
+							<input class = "coeficients" id = "y3" name = "y3" type="text">
+							<label class = "labels">Y</label>
+							<label class = "labels">+</label>
+						</td>
+						<td>
+							<input class = "coeficients" id = "z3" name = "z3" type="text">
+							<label class = "labels">Z</label>
+						</td>
+						<td>
+							<label class = "labels">=</label>
+							<input class = "coeficients" id = "r3" name = "r3" type="text">
+						</td>
 					</tr>
 				</table>
-			</div>
+				<button class = "Submit-button">Submit</button>
+			</form>
+
+			<p id = "output"></p>
 
 		<footer>
 			<h1></h1>

@@ -3,110 +3,32 @@ body {
 	flex-direction:column;
 }
 
-button {
-	margin: 5px;
-	margin-left: 5px;
-	margin-right: 5px;
-	background-color: #00AD9F;
-	border: none;
-	color: white;
-	padding: 10px 12px;
-	text-align: center;
-	text-decoration: none;
-	font-size: 26px;
-	border-radius: 30px;
-	vertical-align: middle;
-	width: 5vw;
-}
 
-td {
-	width: 6vw;
-	justify-content: center;
-	vertical-align: middle;
-	margin: auto;
+form {
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right:auto;
 	text-align: center;
 }
-tr {
-	width: auto;
-}
 
-footer{
-	display: flex;
-	justify-content: center;
-	position: relative;
-  }
 
 .Main-heading {
 	text-align: center;
-	font-family: Verdana;
-}
-
-#submit {
-	display: flex;
-    justify-content: center;
-	margin: auto;
-	background-color: #000000;
-	border: none;
-	color: white;
-	padding: 15px 70px;
-	text-align: center;
-	text-decoration: none;
-	font-size: 25px;
-	border-radius: 8px;
-	vertical-align: middle;
-	transition: all 0.5s;
-	cursor: pointer;
-	width: auto;
-	filter: drop-shadow(0px 0px 2px #8a8a8a);
-}
-
-#submit:active {
-	background-color: #ff7300
-}
-#submit:hover {
-	background-color:#ff7300;
-}
-
-#equation_text {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-	margin-bottom: 2vh;
-	font-size: 30px;
-	width: 40vw;
-	height: 20vh;
-}
-
-#Buttons {
-	justify-content: center;
-	border-top: 5px solid black;
-	margin: auto;
-	margin-top: 20px;
-	position: relative;
-}
-
-#Heading_buttons {
-	padding: 0px;
-	padding-bottom: 5px;
+	font-size: 75px;
 	color: black;
-	font-size: 20px;
-	font-family: Verdana;
-	text-align: center;
-	font-weight: bolder;
+	margin-bottom: 100px;
 }
 
-.animate {
-	box-shadow: 0px 5px rgb(124, 124, 124);
+.coeficients {
+	font-size: 40px;
+	width: 50px;
 }
-.animate:hover {
-	background-color: #009b8e;
-	transform: translateY(1px);
-	box-shadow: 0px 4px rgb(124, 124, 124);
+
+.labels {
+	margin: 10px;
+	font-size:40px;
 }
-.animate:active {
-	background-color: #008075;
-	box-shadow: 0 2px #666;
-	transform: translateY(4px);
-	outline: none;
-    border: none;
- }
+
+.Submit-button{
+	margin: 30px;
+}

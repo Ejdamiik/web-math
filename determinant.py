@@ -15,7 +15,7 @@ class Determinant:
     return "\n".join(res)
 
 
-  def get_develop_determinant(det, e_index):  # Always developing by first row
+  def get_develop_determinant(self, det, e_index):  # Always developing by first row
     res = []
 
     for row_index in range(1, len(det)):  # looping through determinant
@@ -49,7 +49,7 @@ class Determinant:
     develop = []  # Values of developed determinant
     for e_index in range(len(det[0])):  # Developing
 
-      dev = get_develop_determinant(det, e_index)
+      dev = self.get_develop_determinant(det, e_index)
       elem = det[0][e_index] * (-1) ** (0 + e_index + 2) * self.calculate(dev)
       develop.append(elem)
 
