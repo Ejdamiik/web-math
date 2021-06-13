@@ -1,13 +1,13 @@
 body {
 	display: flex;
-	flex-direction:column;
+	flex-direction: column;
 }
 
 
 form {
 	margin-top: 50px;
 	margin-left: auto;
-	margin-right:auto;
+	margin-right: auto;
 	text-align: center;
 }
 
@@ -26,9 +26,13 @@ form {
 
 .labels {
 	margin: 10px;
-	font-size:40px;
+	font-size: 40px;
 }
 
 .Submit-button{
 	margin: 30px;
+}
+
+#output {
+	text-align: center;
 }

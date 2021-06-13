@@ -44,7 +44,12 @@ function handleSubmit(e) {
 
 			prom.then(
 				function(result){
-					document.querySelector("#output").textContent = result;
+					const splitted = result.split(" ");
+					const x = splitted[0];
+					const y = splitted[1];
+					const z = splitted[2];
+
+					document.querySelector("#output").textContent = "(x, y, z) = " + "( " + x + " , " + y + " , " + z + " )";
 			})
 		})
 }
