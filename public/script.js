@@ -1,5 +1,6 @@
 // handleSubmit je funkcia, ktorá sa spustí keď sa bude mať odoslať náš formulár
 function handleSubmit(e) {
+
 	e.preventDefault(); // zabrániť vstavenému odosielaniu v prehliadači
 
 	// this reprezentuje ten formular, ktory odosielame
