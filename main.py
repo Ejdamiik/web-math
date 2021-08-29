@@ -1,4 +1,3 @@
-from io import BytesIO
 from flask import Flask, send_file, request, send_from_directory,render_template
 from determinant import Determinant
 
