@@ -4,6 +4,7 @@ from determinant import Determinant
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+app.static_folder = r'public\static'
 
 
 @app.route('/', defaults={'path': ''})
@@ -14,10 +15,17 @@ def index(path):
   """
   
   if (len(path) == 0):
-    # ak nezadany ziaden subor, teda cesta / chceme index.html
-    return send_from_directory('public/main_page', 'main_page.html')
 
-  return send_from_directory('public/main_page', path)
+    return send_from_directory('public', 'main_page.html')
+
+  return send_from_directory('public', path)
+
+
+@app.route('/change_to_linear', methods=['post', "get"])
+def change_to_linear():
+
+  return send_from_directory('public', 'linear_system.html')
+
 
 
 @app.route('/solve', methods=['post'])

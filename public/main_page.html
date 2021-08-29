@@ -10,8 +10,9 @@
 	</head>
 
 	<body>
-
-		<script type="text/javascript" src="script_main_page.js" ></script>
+		<form id = "Linear_system" method="GET" action="/change_to_linear">
+			<button id = "Linear_system_button" onclick='{{Flask.redirect(url_for(change_to_linear))}}'>Linear system</button>
+		</form>
 
 	</body>
 </html>
