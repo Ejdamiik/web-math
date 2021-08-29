@@ -15,9 +15,9 @@ def index(path):
   
   if (len(path) == 0):
     # ak nezadany ziaden subor, teda cesta / chceme index.html
-    return send_from_directory('public', 'index.html')
+    return send_from_directory('public/main_page', 'main_page.html')
 
-  return send_from_directory('public', path)
+  return send_from_directory('public/main_page', path)
 
 
 @app.route('/solve', methods=['post'])
