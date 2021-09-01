@@ -1,0 +1,16 @@
+.Main-heading {
+	text-align: center;
+	font-size: 75px;
+	color: black;
+	margin-bottom: 100px;
+}
+
+.Buttons {
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+button {
+	margin: 20px;
+}

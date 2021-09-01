@@ -4,7 +4,7 @@
 	<head>
 		<title>Linear system</title>
 
-		<link rel="stylesheet" type="text/css" href="style_linear_system.css">
+		<link rel="stylesheet" type="text/css" href="/static/style_linear_system.css">
 
 		<link rel="icon" href="http://simpleicon.com/wp-content/uploads/calculator-64x64.png">
 	</head>
@@ -13,7 +13,7 @@
 		<header>
 
 			<form method="GET" action="/">
-				<button onclick='{{Flask.redirect(url_for())}}'><img src = "../images/home.png" width = 50px></button>
+				<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/home.png" width = 50px></button>
 			</form>
 
 			<h1 class = "Main-heading">Linear equation system</h1>
@@ -83,7 +83,7 @@
 						</td>
 					</tr>
 				</table>
-				<button class = "Submit-button"><img src = "../images/calculator.png" width = 50px></button>
+				<button class = "Submit-button"><img src = "/static/calculator.png" width = 50px></button>
 			</form>
 
 			<p id = "output"></p>

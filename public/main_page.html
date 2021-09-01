@@ -4,20 +4,27 @@
 	<head>
 		<title>Web-mpa</title>
 
-		<link rel="stylesheet" type="text/css" href="style_main_page.css">
+		<link rel="stylesheet" type="text/css" href="/static/style_main_page.css">
 
 		<link rel="icon" href="http://simpleicon.com/wp-content/uploads/calculator-64x64.png">
 	</head>
 
 	<body>
+		<header>
 
-		<form method="GET" action="/linear">
-			<button onclick='{{Flask.redirect(url_for(linear))}}'>Linear system</button>
-		</form>
+			<h1 class = "Main-heading">Web calculations</h1>
 
-		<form method="GET" action="/graph">
-			<button onclick='{{Flask.redirect(url_for(graph))}}'>Graph vizualization</button>
-		</form>
+		</header>
+
+		<div class = "Buttons">
+			<form method="GET" action="/linear">
+				<button onclick='{{Flask.redirect(url_for(linear))}}'>Linear system</button>
+			</form>
+
+			<form method="GET" action="/graph">
+				<button onclick='{{Flask.redirect(url_for(graph))}}'>Graph vizualization</button>
+			</form>
+		</div>
 
 	</body>
 </html>
