@@ -11,6 +11,10 @@ form {
 	text-align: center;
 }
 
+button {
+	border: none;
+	background: none;
+}
 
 .Main-heading {
 	text-align: center;
