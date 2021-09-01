@@ -21,10 +21,19 @@ def index(path):
   return send_from_directory('public', path)
 
 
-@app.route('/change_to_linear', methods=['post', "get"])
-def change_to_linear():
+@app.route('/linear', methods=['post', "get"])
+def linear():
 
   return send_from_directory('public', 'linear_system.html')
+
+
+
+
+@app.route('/graph', methods=['post', "get"])
+def graph():
+
+  return send_from_directory('public', 'graph_visualization.html')
+
 
 
 

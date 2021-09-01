@@ -11,9 +11,15 @@
 
 	<body>
 		<header>
+
+			<form method="GET" action="/">
+				<button onclick='{{Flask.redirect(url_for())}}'>Main</button>
+			</form>
+
 			<h1 class = "Main-heading">Linear equation system</h1>
+
 		</header>
-		
+
 		<form id = "eq_system" method="POST" action="/solve">
 				<table>
 					<tr>
