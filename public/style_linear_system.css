@@ -1,6 +1,7 @@
 body {
 	display: flex;
 	flex-direction: column;
+	background-color: #849488;
 }
 
 
@@ -14,6 +15,15 @@ form {
 button {
 	border: none;
 	background: none;
+	transition: transform .2s;
+}
+
+button:active {
+	transform: translateY(4px);
+}
+
+button:hover {
+	transform: translateY(4px);
 }
 
 .Main-heading {
@@ -26,6 +36,7 @@ button {
 .coeficients {
 	font-size: 40px;
 	width: 50px;
+	background-color: #abb591;
 }
 
 .labels {
