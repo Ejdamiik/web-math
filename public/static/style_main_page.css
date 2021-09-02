@@ -12,5 +12,20 @@
 }
 
 button {
+	border: none;
+	background: none;
+	transition: transform .2s;
 	margin: 20px;
+}
+
+button:active {
+	transform: translateY(4px);
+}
+
+button:hover {
+	transform: translateY(4px);
+}
+
+body {
+	background-color: #849488;
 }
