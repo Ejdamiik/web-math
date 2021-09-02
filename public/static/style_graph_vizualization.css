@@ -1,0 +1,36 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #849488;
+}
+
+button {
+	margin: 10px;
+	border: none;
+	background: none;
+	transition: transform .2s;
+	font-size: 50px;
+}
+
+button:active {
+	transform: translateY(4px);
+}
+
+button:hover {
+	transform: translateY(4px);
+}
+
+.options {
+	float: left;
+}
+
+.options_div {
+	margin-top: 50px;
+	display: block;
+}
+
+#quadratic {
+	margin-left: 50px;
+	margin-right: 50px;
+}

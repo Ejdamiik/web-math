@@ -3,7 +3,7 @@
 
 	<head>
 		<title>Graph visualization</title>
-		<link rel="stylesheet" type="text/css" href="style_graph_vizualization.css">
+		<link rel="stylesheet" type="text/css" href="/static/style_graph_vizualization.css">
 		<link rel="icon" href="http://simpleicon.com/wp-content/uploads/calculator-64x64.png">
 	</head>
 
@@ -13,10 +13,24 @@
 			<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/home.png" width = 50px></button>
 		</form>
 
+		<div class = "options_div">
+			<form id = "option_panel" class = "options" method="POST" action="/get_graph">
+				<input type="radio" id="linear" name="option" value="linear">
+				<label for="linear">Linear</label><br>
+				<input type="radio" id="quadratic" name="option" value="quadratic">
+				<label for="quadratic">Quadratic</label><br>
+				<input type="radio" id="cubic" name="option" value="cubic">
+				<label for="cubic">Cubic</label>
+
+				<button id = "get_graph_button">GET GRAPH !</button>
+			</form>
+		</div>
 
 
+		<img id="output" />
 
-		<script type="text/javascript" src="script_graph_vizualization.js" ></script>
+
+		<script type="text/javascript" src="/static/script_graph_visualization.js" ></script>
 
 	</body>
 </html>

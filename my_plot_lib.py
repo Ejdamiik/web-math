@@ -54,7 +54,7 @@ def absolute(x):
   return abs(x)
 
 def linear(x):
-  return x
+  return 10 * x
 
 #@title
 from typing import Tuple

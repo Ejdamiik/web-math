@@ -1,10 +1,29 @@
 from flask import Flask, send_file, request, send_from_directory,render_template
 from determinant import Determinant
+from io import BytesIO
+import my_plot_lib
+from PIL import Image
 
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.static_folder = r'public\static'
+
+
+
+def serve_pil_image(img):
+  """
+  Allows to save PIL image object to a
+  virtual file in memory and then return
+  it as a HTTP response
+  """
+
+  img_io = BytesIO()
+  img.save(img_io, 'PNG', quality=70)
+  img_io.seek(0)
+  return send_file(img_io, mimetype='image/png')
+
+
 
 
 @app.route('/', defaults={'path': ''})
@@ -27,14 +46,26 @@ def linear():
   return send_from_directory('public', 'linear_system.html')
 
 
-
-
 @app.route('/graph', methods=['post', "get"])
 def graph():
 
   return send_from_directory('public', 'graph_visualization.html')
 
 
+@app.route('/get_graph', methods=["post"])
+def get_graph():
+
+	canvas = Image.new('RGB', (400, 500), (0,0,0))
+	my_plot_lib.create_cartesian(canvas)
+
+	selected = request.form.get('selected')
+	if selected == "linear":
+		my_plot_lib.draw_plot(canvas, my_plot_lib.linear, (255, 255, 255))
+	elif selected == "quadratic":
+		my_plot_lib.draw_plot(canvas, my_plot_lib.quadratic, (255, 255, 255))
+	elif selected == "cubic":
+		my_plot_lib.draw_plot(canvas, my_plot_lib.cubic, (255, 255, 255))
+	return serve_pil_image(canvas)
 
 
 @app.route('/solve', methods=['post'])
