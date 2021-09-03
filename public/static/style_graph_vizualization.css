@@ -33,3 +33,15 @@ button:hover {
 #output{
 	background-color: black;
 }
+
+#plot_color {
+	margin: 20px;
+}
+
+footer {
+	margin: 20px;
+}
+
+a {
+	align-items: center;
+}

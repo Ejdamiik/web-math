@@ -41,9 +41,9 @@ def hexColor(color: str) -> Tuple:
   color - string with color hexcode
   """
   color = color.replace("\n", "")
-  r = self.hex2dec(color[1:3])
-  g = self.hex2dec(color[3:5])
-  b = self.hex2dec(color[5:])
+  r = hex2dec(color[1:3])
+  g = hex2dec(color[3:5])
+  b = hex2dec(color[5:])
 
   return (r, g, b)
 

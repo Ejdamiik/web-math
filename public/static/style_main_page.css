@@ -27,5 +27,17 @@ button:hover {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background-color: #849488;
+}
+
+
+footer {
+	margin-top: 50px;
+}
+
+a {
+	align-items: center;
 }
