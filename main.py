@@ -26,10 +26,10 @@ def hex2dec(hex_num: str) -> int:
 
 	for index in range(len(hex_num)):
 
-	if hex_num[index].lower() in convertion:
-	  decimal += (16**(len(hex_num) - index - 1)) * convertion[hex_num[index].lower()]
-	else:
-	  decimal += (16**(len(hex_num) - index - 1)) * int(hex_num[index].lower())
+		if hex_num[index].lower() in convertion:
+			decimal += (16**(len(hex_num) - index - 1)) * convertion[hex_num[index].lower()]
+		else:
+			decimal += (16**(len(hex_num) - index - 1)) * int(hex_num[index].lower())
 
 	return decimal
 
@@ -104,11 +104,11 @@ def get_graph():
 	r, g, b = hexColor(color)
 
 	if selected == "linear":
-	my_plot_lib.draw_plot(canvas, my_plot_lib.linear, (r, g, b))
+		my_plot_lib.draw_plot(canvas, my_plot_lib.linear, (r, g, b))
 	elif selected == "quadratic":
-	my_plot_lib.draw_plot(canvas, my_plot_lib.quadratic, (r, g, b))
+		my_plot_lib.draw_plot(canvas, my_plot_lib.quadratic, (r, g, b))
 	elif selected == "cubic":
-	my_plot_lib.draw_plot(canvas, my_plot_lib.cubic, (r, g, b))
+		my_plot_lib.draw_plot(canvas, my_plot_lib.cubic, (r, g, b))
 
 	return serve_pil_image(canvas)
 
@@ -174,12 +174,12 @@ def solve() -> str:
 
 
 	if abs(x) == 0:   # Weird glitch (its possible to get -0)
-	x = abs(x)
+		x = abs(x)
 	if abs(y) == 0:
-	y = abs(y)
+		y = abs(y)
 	if abs(z) == 0:
-	z = abs(z)
+		z = abs(z)
 
 	return f"{x} {y} {z}"
 
-	app.run()
+app.run()
