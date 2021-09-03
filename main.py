@@ -3,13 +3,49 @@ from determinant import Determinant
 from io import BytesIO
 import my_plot_lib
 from PIL import Image
+from typing import Tuple
 
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.static_folder = r'public\static'
 
+def hex2dec(hex_num: str) -> int:
+  """
+  Method resposible for converting hexadecimal number to decimal number
 
+  hex_num - string with hexadecimal number
+  """
+
+  hex_num = hex_num.replace("\n","")
+  convertion = {
+      "a": 10, "b": 11, "c": 12, 
+      "d": 13, "e": 14, "f": 15
+      }
+  decimal = 0
+
+  for index in range(len(hex_num)):
+
+    if hex_num[index].lower() in convertion:
+      decimal += (16**(len(hex_num) - index - 1)) * convertion[hex_num[index].lower()]
+    else:
+      decimal += (16**(len(hex_num) - index - 1)) * int(hex_num[index].lower())
+  
+  return decimal
+
+
+def hexColor(color: str) -> Tuple:
+  """
+  Method responsible for converting color hexcode to rgb tuple
+
+  color - string with color hexcode
+  """
+  color = color.replace("\n", "")
+  r = self.hex2dec(color[1:3])
+  g = self.hex2dec(color[3:5])
+  b = self.hex2dec(color[5:])
+
+  return (r, g, b)
 
 def serve_pil_image(img):
   """
@@ -55,17 +91,21 @@ def graph():
 @app.route('/get_graph', methods=["post"])
 def get_graph():
 
-	canvas = Image.new('RGB', (400, 500), (0,0,0))
-	my_plot_lib.create_cartesian(canvas)
+  canvas = Image.new('RGB', (400, 400), (0,0,0))
+  my_plot_lib.create_cartesian(canvas)
+  selected = request.form.get("selected")
+  color = request.form.get("color")
 
-	selected = request.form.get('selected')
-	if selected == "linear":
-		my_plot_lib.draw_plot(canvas, my_plot_lib.linear, (255, 255, 255))
-	elif selected == "quadratic":
-		my_plot_lib.draw_plot(canvas, my_plot_lib.quadratic, (255, 255, 255))
-	elif selected == "cubic":
-		my_plot_lib.draw_plot(canvas, my_plot_lib.cubic, (255, 255, 255))
-	return serve_pil_image(canvas)
+  r, g, b = hexColor(color)
+
+  if selected == "linear":
+    my_plot_lib.draw_plot(canvas, my_plot_lib.linear, (r, g, b))
+  elif selected == "quadratic":
+    my_plot_lib.draw_plot(canvas, my_plot_lib.quadratic, (r, g, b))
+  elif selected == "cubic":
+    my_plot_lib.draw_plot(canvas, my_plot_lib.cubic, (r, g, b))
+
+  return serve_pil_image(canvas)
 
 
 @app.route('/solve', methods=['post'])

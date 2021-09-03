@@ -15,8 +15,11 @@ function get_graph(e) {
 	  selected = document.querySelector("#cubic").value;
 	}
 
+	const color = document.querySelector("#plot_color").value;
+
 	const formular = new URLSearchParams(); // Vytvoríme štruktúru, ktorá bude reprezentovať formulár
 	formular.append('selected', selected); // Pridáme tam naše hodnoty
+	formular.append('color', color);
 
 	const url = this.action; // Nacitame povodnu URL zadanu vo formulari
 	const method = this.method; // NAcitame povodnu metodu zadanu vo formulari

@@ -44,10 +44,15 @@ button:hover {
 	font-size: 40px;
 }
 
-.Submit-button{
+#Submit-button{
 	margin: 30px;
 }
 
 #output {
+	margin: 30px;
 	text-align: center;
+}
+
+#Example-button {
+	font-size: 50px;
 }

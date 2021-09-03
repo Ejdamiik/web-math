@@ -13,21 +13,26 @@
 			<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/home.png" width = 50px></button>
 		</form>
 
-		<div class = "options_div">
-			<form id = "option_panel" class = "options" method="POST" action="/get_graph">
+		
+		<form id = "option_panel" class = "options" method="POST" action="/get_graph">
+			<div class = "options_div">
 				<input type="radio" id="linear" name="option" value="linear">
-				<label for="linear">Linear</label><br>
+				<label for="linear">Linear</label>
 				<input type="radio" id="quadratic" name="option" value="quadratic">
-				<label for="quadratic">Quadratic</label><br>
+				<label for="quadratic">Quadratic</label>
 				<input type="radio" id="cubic" name="option" value="cubic">
 				<label for="cubic">Cubic</label>
-
-				<button id = "get_graph_button">GET GRAPH !</button>
-			</form>
-		</div>
+			</div>
 
 
-		<img id="output" />
+			<button id = "get_graph_button">GET GRAPH !</button>
+		</form>
+
+		<label for="head">Pick color:</label>
+		<input type="color" id="plot_color" name="plot_color"
+           value="#ffffff">
+
+		<img id="output" / width = "400px" height = "400px">
 
 
 		<script type="text/javascript" src="/static/script_graph_visualization.js" ></script>

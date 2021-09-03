@@ -55,5 +55,48 @@ function handleSubmit(e) {
 		})
 }
 
+function reset() {
+
+	document.querySelector("#x1").value = "";
+	document.querySelector("#y1").value = "";
+	document.querySelector("#z1").value = "";
+	document.querySelector("#r1").value = "";
+
+	document.querySelector("#x2").value = "";
+	document.querySelector("#y2").value = "";
+	document.querySelector("#z2").value = "";
+	document.querySelector("#r2").value = "";
+
+	document.querySelector("#x3").value = "";
+	document.querySelector("#y3").value = "";
+	document.querySelector("#z3").value = "";
+	document.querySelector("#r3").value = "";
+
+	document.querySelector("#output").innerHTML = "";
+}
+
+function get_example() {
+
+	document.querySelector("#x1").value = "2";
+	document.querySelector("#y1").value = "-3";
+	document.querySelector("#z1").value = "2";
+	document.querySelector("#r1").value = "2";
+
+	document.querySelector("#x2").value = "-1";
+	document.querySelector("#y2").value = "-4";
+	document.querySelector("#z2").value = "-3";
+	document.querySelector("#r2").value = "-18";
+
+	document.querySelector("#x3").value = "3";
+	document.querySelector("#y3").value = "5";
+	document.querySelector("#z3").value = "-1";
+	document.querySelector("#r3").value = "10";
+
+	document.querySelector("#Submit-button").click()
+}
+
+
 
 document.querySelector("#eq_system").addEventListener("submit", handleSubmit);
+document.querySelector("#Reset-button").addEventListener("click", reset);
+document.querySelector("#Example-button").addEventListener("click", get_example);
