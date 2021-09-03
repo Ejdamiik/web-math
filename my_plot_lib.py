@@ -1,63 +1,69 @@
 from PIL import Image
+from typing import Tuple, Callable
 
-def draw_plot(picture, function, color):
+def draw_plot(picture, function: Callable, color: Tuple) -> None:
+	"""
+	Function draws plot of function with color to a picture xd
+	"""
 
-  width, height = picture.size
-  middle = (width // 2, height // 2)
+	width, height = picture.size
+	middle = (width // 2, height // 2)
 
-  points = []
-  for x in range(0,width + 1):
-    xx = (x - middle[0])
+	points = []
+	for x in range(0,width + 1):
+		xx = (x - middle[0])
 
-    y = function(xx)
+	y = function(xx)
 
-    if y != None: # ouf of Domain
-      points.append((xx, y))
+	if y != None: # ouf of Domain
+	  points.append((xx, y))
 
-  for i in range(1, len(points)):
-    A = points[i - 1]
-    B = points[i]
+	for i in range(1, len(points)):
+		A = points[i - 1]
+		B = points[i]
 
-    A = (A[0] * 10, A[1])
-    B = (B[0] * 10, B[1])
+		A = (A[0] * 10, A[1])
+		B = (B[0] * 10, B[1])
 
-    A = (A[0] + middle[0], height - (A[1] + middle[1]))
-    B = (B[0] + middle[0], height - (B[1] + middle[1]))
+		A = (A[0] + middle[0], height - (A[1] + middle[1]))
+		B = (B[0] + middle[0], height - (B[1] + middle[1]))
 
-    line(picture, A, B, color)
+	line(picture, A, B, color)
 
 
-def create_cartesian(picture):
-  color = (255, 0, 0)
-  width, height = picture.size
+def create_cartesian(picture) -> None:
+	"""
+	Function creates cartesian system to a picture
+	"""
+	color = (255, 0, 0)
+	width, height = picture.size
 
-  line(picture, (0, height // 2), (width, height // 2), color)
-  line(picture, (width // 2, 0), (width // 2, height), color)
+	line(picture, (0, height // 2), (width, height // 2), color)
+	line(picture, (width // 2, 0), (width // 2, height), color)
 
 """Functions"""
 
 from math import sin, pi, log10, cos
+from typing import Union
 
-def quadratic(x):
+def quadratic(x: int) -> int:
   return x**2
 
-def n_quadratic(x):
+def n_quadratic(x: int) -> int:
   return -x**2
 
-def cubic(x):
+def cubic(x: int) -> int:
   return x**3
 
-def n_cubic(x):
+def n_cubic(x: int) -> int:
   return -x**3
 
-def absolute(x):
+def absolute(x: int) -> int:
   return abs(x)
 
-def linear(x):
+def linear(x: int) -> int:
   return 10 * x
 
-#@title
-from typing import Tuple
 
 def line(picture, A: Tuple, B: Tuple, color: Tuple) -> None:
 

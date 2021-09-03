@@ -1,11 +1,13 @@
+from typing import List
+
 class Determinant:
 
-  def __init__(self, matrix):
+  def __init__(self, matrix: List) -> None:
     self.data = matrix
 
     self.value = self.calculate(self.data)
   
-  def __repr__(self):
+  def __repr__(self) -> None:
   
     res = []
     for row in self.data:
@@ -15,7 +17,7 @@ class Determinant:
     return "\n".join(res)
 
 
-  def get_develop_determinant(self, det, e_index):  # Always developing by first row
+  def get_develop_determinant(self, det: List, e_index: int) -> List:  # Always developing by first row
     res = []
 
     for row_index in range(1, len(det)):  # looping through determinant
@@ -33,7 +35,7 @@ class Determinant:
     return res
 
 
-  def calculate(self, det):
+  def calculate(self, det: List) -> int:
     if len(det[0]) == 2:  # If it is elementary 2x2 determinant
 
       """
@@ -62,5 +64,5 @@ class Determinant:
     return sum
 
 
-  def get_value(self):
+  def get_value(self) -> int:
     return self.value
