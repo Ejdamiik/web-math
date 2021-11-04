@@ -10,7 +10,6 @@ button {
 	border: none;
 	background: none;
 	transition: transform .2s;
-	font-size: 50px;
 }
 
 button:active {
@@ -21,11 +20,8 @@ button:hover {
 	transform: translateY(4px);
 }
 
-.options {
-	float: left;
-}
 
-.options_div {
+form {
 	margin-top: 50px;
 	text-align: center;
 }

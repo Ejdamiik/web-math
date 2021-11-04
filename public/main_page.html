@@ -6,7 +6,7 @@
 
 		<link rel="stylesheet" type="text/css" href="/static/style_main_page.css">
 
-		<link rel="icon" href="http://simpleicon.com/wp-content/uploads/calculator-64x64.png">
+		<link rel="icon" href="/static/images/calculator.png">
 	</head>
 
 	<body>
@@ -18,18 +18,22 @@
 
 		<div class = "Buttons">
 			<form method="GET" action="/linear">
-				<button onclick='{{Flask.redirect(url_for(linear))}}'><img src = "/static/equation.png" width = 200px></button>
+				<button onclick='{{Flask.redirect(url_for(linear))}}'><img src = "/static/images/equation.png" width = 200px></button>
 			</form>
 
 			<form method="GET" action="/graph">
-				<button onclick='{{Flask.redirect(url_for(graph))}}'><img src = "/static/graph.png" width = 200px></button>
+				<button onclick='{{Flask.redirect(url_for(graph))}}'><img src = "/static/images/graph.png" width = 200px></button>
+			</form>
+
+			<form method="GET" action="/relations">
+				<button onclick='{{Flask.redirect(url_for(relations))}}'><img src = "/static/images/relation.png" width = 200px></button>
 			</form>
 		</div>
 
 	<script type="text/javascript" src="/static/script_main_page.js" ></script>
 
 		<footer>
-			<a href = "https://github.com/Ejdamiik" target="_blank"><img src = "/static/github.png" width = "100px"></a>
+			<a href = "https://github.com/Ejdamiik" target="_blank"><img src = "/static/images/github.png" width = "100px"></a>
 		</footer>
 
 	</body>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Work with relations</title>
+
+		<link rel="stylesheet" type="text/css" href="/static/style_relations.css">
+
+		<link rel="icon" href="/static/images/calculator.png">
+	</head>
+
+	<body>
+		<header>
+
+			<form method="GET" action="/">
+				<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/images/home.png" width = 50px></button>
+			</form>
+
+			<h1 class = "Main-heading">Relations - properties and closures</h1>
+
+		</header>
+
+		<form class = "input_field" id = "relations_form" method = "POST" action = "/solve_relation">
+
+			<p>Enter a base set:</p>
+			<p>{<input type="text" id="base_entry" name="base_entry" class = "inputs">}</p>
+
+			<p>Enter a relation:</p>
+			<p>{<input type="text" id="relation_entry" name="relation_entry" class = "inputs">}</p>
+
+			<button id = "Submit-button"><img src = "/static/images/eval.png" width = 80px></button>
+
+		</form>
+
+		<p id = "output"> </p>
+
+
+		<footer>
+			<a href = "https://github.com/Ejdamiik" target="_blank"><img src = "/static/images/github.png" width = "100px"></a>
+		</footer>
+
+		<script type="text/javascript" src="/static/script_relations.js" ></script>
+
+	</body>
+</html>

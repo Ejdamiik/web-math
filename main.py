@@ -1,7 +1,8 @@
 from flask import Flask, send_file, request, send_from_directory,render_template
-from determinant import Determinant
+from linear_back.determinant import Determinant
 from io import BytesIO
-import my_plot_lib
+import graph_back.my_plot_lib
+import relations_back.out as o
 from PIL import Image
 from typing import Tuple, Callable
 
@@ -88,6 +89,12 @@ def graph():
   return send_from_directory('public', 'graph_visualization.html')
 
 
+@app.route('/relations', methods=['post', "get"])
+def relations():
+
+  return send_from_directory('public', 'relations.html')
+
+
 @app.route('/get_graph', methods=["post"])
 def get_graph():
 
@@ -112,6 +119,15 @@ def get_graph():
 
 	return serve_pil_image(canvas)
 
+
+@app.route('/solve_relation', methods=["get", 'post'])
+def solve_relation():
+
+	base = request.form.get('base')
+	relation = request.form.get('relation')
+
+	res = o.get_all(base, relation)
+	return res
 
 @app.route('/solve', methods=['post'])
 def solve() -> str:

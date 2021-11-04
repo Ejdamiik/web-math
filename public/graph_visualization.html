@@ -4,13 +4,13 @@
 	<head>
 		<title>Graph visualization</title>
 		<link rel="stylesheet" type="text/css" href="/static/style_graph_vizualization.css">
-		<link rel="icon" href="http://simpleicon.com/wp-content/uploads/calculator-64x64.png">
+		<link rel="icon" href="/static/images/calculator.png">
 	</head>
 
 	<body>
 
 		<form method="GET" action="/">
-			<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/home.png" width = 50px></button>
+			<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/images/home.png" width = 50px></button>
 		</form>
 
 		
@@ -25,7 +25,7 @@
 			</div>
 
 
-			<button id = "get_graph_button">GET GRAPH !</button>
+			<button id = "get_graph_button"><img src = "/static/images/eval.png" width = 80px></button>
 		</form>
 
 		<label for="head">Pick color:</label>
@@ -35,7 +35,7 @@
 		<img id="output" / width = "400px" height = "400px">
 
 		<footer>
-			<a href = "https://github.com/Ejdamiik" target="_blank"><img src = "/static/github.png" width = "100px"></a>
+			<a href = "https://github.com/Ejdamiik" target="_blank"><img src = "/static/images/github.png" width = "100px"></a>
 		</footer>
 
 		<script type="text/javascript" src="/static/script_graph_visualization.js" ></script>
