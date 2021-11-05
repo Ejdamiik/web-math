@@ -1,7 +1,7 @@
 from flask import Flask, send_file, request, send_from_directory,render_template
 from linear_back.determinant import Determinant
 from io import BytesIO
-import graph_back.my_plot_lib
+import graph_back.my_plot_lib as my_plot_lib
 import relations_back.out as o
 from PIL import Image
 from typing import Tuple, Callable
