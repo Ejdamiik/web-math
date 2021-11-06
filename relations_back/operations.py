@@ -27,10 +27,11 @@ def transitive_closure(relation: Relation) -> Relation:
 
 def reflexive_closure(base_set: Base, relation: Relation) -> Relation:
 
+	new = relation.copy()
 	for e in base_set:
-		relation.add((e, e))
+		new.add((e, e))
 
-	return relation
+	return new
 
 
 def symetric_closure(relation: Relation) -> Relation:
