@@ -48,17 +48,13 @@ a {
 	align-items: center;
 }
 
-footer {
-	margin-top: 50px;
-}
-
 
 .input_field {
 	font-size: 40px;
 }
 
 .inputs {
-	width: 150px;
+	width: 300px;
 	font-size: 40px;
 	background-color: #abb591;
 }

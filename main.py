@@ -77,6 +77,12 @@ def index(path):
   return send_from_directory('public', path)
 
 
+@app.route('/info', methods=['post', "get"])
+def info():
+
+  return send_from_directory('public', 'info.html')
+
+
 @app.route('/linear', methods=['post', "get"])
 def linear():
 

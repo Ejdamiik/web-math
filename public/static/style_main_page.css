@@ -11,6 +11,12 @@
   	justify-content: center;
 }
 
+
+#info-form {
+	text-align: center;
+}
+
+
 button {
 	border: none;
 	background: none;
@@ -36,6 +42,10 @@ body {
 
 footer {
 	margin-top: 50px;
+	margin-bottom: 20px;
+	position:absolute;
+	bottom:0;
+
 }
 
 a {

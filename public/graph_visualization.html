@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-		<title>Graph visualization</title>
+		<title>Function visualization</title>
 		<link rel="stylesheet" type="text/css" href="/static/style_graph_vizualization.css">
 		<link rel="icon" href="/static/images/calculator.png">
 	</head>
@@ -12,6 +12,8 @@
 		<form method="GET" action="/">
 			<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/images/home.png" width = 50px></button>
 		</form>
+
+		<h1 class = "Main-heading"> Function visualization </h1>
 
 		
 		<form id = "option_panel" class = "options" method="POST" action="/get_graph">
