@@ -2,7 +2,7 @@ import relations_back.operations as o
 import relations_back.parse_string as ps
 
 
-def get_all(base_string, relation_string):
+def get_all(base_string, relation_string, closure_wanted):
 
 	base = ps.create_set(base_string)
 	relation = ps.create_set(relation_string)
@@ -17,9 +17,9 @@ def get_all(base_string, relation_string):
 	}
 
 	closures = {
-		"reflexive closure" : o.reflexive_closure(base, relation),
-		"symetric closure" : o.symetric_closure(relation),
-		"transitive closure" : o.transitive_closure(relation)
+		"reflexive" : o.reflexive_closure,
+		"symetric" : o.symetric_closure,
+		"transitive" : o.transitive_closure
 	}
 
 		
@@ -41,11 +41,20 @@ def get_all(base_string, relation_string):
 			negative += _property + ", "
 
 
-	closures_out = "Closures:\n"
-	for _type, closure in closures.items():
+	closure_out = "Closure:\n"
 
-		closures_out += f"{_type}: {closure}\n"
+	res = relation
 
+	print(closure_wanted)
+	for closure in closure_wanted:
+
+		if closure == "reflexive":
+			res = closures[closure](base, res)
+
+		else:
+			res = closures[closure](res)
+
+	closure_out += str(res)
 
 	out += positive[:-2]
 	out += MARGIN
@@ -54,7 +63,7 @@ def get_all(base_string, relation_string):
 	out += negative[:-2]
 	out += MARGIN
 	out += MARGIN
-	out += closures_out[:-1]
+	out += closure_out[:-1]
 	out += MARGIN
 
 	return out

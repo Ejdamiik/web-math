@@ -4,20 +4,34 @@ function replaceLineBreaksWithHTML(string) {
 }
 
 
-// handleSubmit je funkcia, ktorá sa spustí keď sa bude mať odoslať náš formulár
 function handleSubmit(e) {
 
-	e.preventDefault(); // zabrániť vstavenému odosielaniu v prehliadači
+	e.preventDefault();
 
-	// this reprezentuje ten formular, ktory odosielame
 	const base = this.querySelector("#base_entry").value;
 	const relation = this.querySelector("#relation_entry").value;
+
+	let closures = [];
+
+
+	if (this.querySelector("#reflexive_closure").checked) {
+		closures.push("reflexive");
+	}
+	
+	if (this.querySelector("#symetric_closure").checked) {
+		closures.push("symetric");
+	}
+
+	if (this.querySelector("#transitive_closure").checked) {
+		closures.push("transitive");
+	}
 
 	const formular = new URLSearchParams();
 
 
 	formular.append('base', base);
 	formular.append('relation', relation);
+	formular.append('closures', closures);
 
 	const url = this.action; // Nacitame povodnu URL zadanu vo formulari
 	const method = this.method; // NAcitame povodnu metodu zadanu vo formulari

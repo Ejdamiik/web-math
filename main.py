@@ -131,9 +131,13 @@ def solve_relation():
 
 	base = request.form.get('base')
 	relation = request.form.get('relation')
+	closures = request.form.get('closures')
 
-	res = o.get_all(base, relation)
+	closures = closures.split(",")
+
+	res = o.get_all(base, relation, closures)
 	return res
+
 
 @app.route('/solve', methods=['post'])
 def solve() -> str:
