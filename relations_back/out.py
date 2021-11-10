@@ -1,8 +1,10 @@
 import relations_back.operations as o
 import relations_back.parse_string as ps
+from typing import List
 
-
-def get_all(base_string, relation_string, closure_wanted):
+def get_all(base_string: str,
+			relation_string: str,
+			closure_wanted: List[str]) -> str:
 
 	base = ps.create_set(base_string)
 	relation = ps.create_set(relation_string)

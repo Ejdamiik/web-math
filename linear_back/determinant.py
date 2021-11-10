@@ -1,8 +1,12 @@
 from typing import List
 
+
+Grid = List[List[int]]
+
+
 class Determinant:
 
-  def __init__(self, matrix: List) -> None:
+  def __init__(self, matrix: Grid) -> None:
     self.data = matrix
 
     self.value = self.calculate(self.data)
@@ -17,7 +21,7 @@ class Determinant:
     return "\n".join(res)
 
 
-  def get_develop_determinant(self, det: List, e_index: int) -> List:  # Always developing by first row
+  def get_develop_determinant(self, det: Grid, e_index: int) -> Grid:  # Always developing by first row
     res = []
 
     for row_index in range(1, len(det)):  # looping through determinant
@@ -35,7 +39,7 @@ class Determinant:
     return res
 
 
-  def calculate(self, det: List) -> int:
+  def calculate(self, det: Grid) -> int:
     if len(det[0]) == 2:  # If it is elementary 2x2 determinant
 
       """
@@ -56,12 +60,8 @@ class Determinant:
       develop.append(elem)
 
     # Result is sum of those values
-
-    sum = 0
-    for e in develop:
-      sum += e
       
-    return sum
+    return sum(develop)
 
 
   def get_value(self) -> int:

@@ -1,4 +1,4 @@
-from typing import Tuple, Set
+from typing import Tuple, Set, Union
 
 
 def extract_second(line: str) -> str:
@@ -8,7 +8,7 @@ def extract_second(line: str) -> str:
 	return line.split("=")[1]
 
 
-def create_set(stringified: str) -> Set:
+def create_set(stringified: str) -> Set[Union[Tuple[str], str]]:
 
 	# Only for tuples and strings
 
@@ -55,7 +55,7 @@ def create_set(stringified: str) -> Set:
 
 
 
-def create_tuple(stringified: str) -> Tuple:
+def create_tuple(stringified: str) -> Tuple[str]:
 
 	stringified = stringified.replace(" ", "").replace("(", "").replace(")", "")
 	elems = stringified.split(",")

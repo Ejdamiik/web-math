@@ -1,7 +1,7 @@
 from PIL import Image
 from typing import Tuple, Callable
 
-def draw_plot(picture, function: Callable, color: Tuple) -> None:
+def draw_plot(picture: Image, function: Callable, color: Tuple) -> None:
     """
     Function draws plot of function with color to a picture xd
     """
@@ -65,7 +65,10 @@ def linear(x: int) -> int:
     return 10 * x
 
 
-def line(picture, A: Tuple, B: Tuple, color: Tuple) -> None:
+def line(picture,
+		A: Tuple[int, int],
+		B: Tuple[int, int],
+		color: Tuple[int, int, int]) -> None:
 
   width, height = picture.size
 
