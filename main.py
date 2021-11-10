@@ -1,6 +1,6 @@
 from flask import Flask, request, send_from_directory, render_template
 from linear_back.determinant import Determinant
-import graph_back.my_plot_lib as my_plot_lib
+import graph_back.func_vis as func_vis
 import relations_back.out as o
 from PIL import Image
 from typing import Tuple, Callable
@@ -78,21 +78,9 @@ def get_graph():
     Return picture with wanted plot
     """
 
-    canvas = Image.new('RGB', (400, 400), (0, 0, 0))
-    my_plot_lib.create_cartesian(canvas)
-    selected = request.form.get("selected")
-    color = request.form.get("color")
+    plot = func_vis.get_figure()
 
-    r, g, b = helper.hexColor(color)
-
-    if selected == "linear":
-        my_plot_lib.draw_plot(canvas, my_plot_lib.linear, (r, g, b))
-    elif selected == "quadratic":
-        my_plot_lib.draw_plot(canvas, my_plot_lib.quadratic, (r, g, b))
-    elif selected == "cubic":
-        my_plot_lib.draw_plot(canvas, my_plot_lib.cubic, (r, g, b))
-
-    return helper.serve_pil_image(canvas)
+    return helper.serve_img(plot)
 
 
 @app.route('/solve_relation', methods=["get", 'post'])

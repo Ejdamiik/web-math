@@ -3,19 +3,9 @@ function get_graph(e) {
 	e.preventDefault(); // zabrániť vstavenému odosielaniu v prehliadači
 
 	let selected = null;
-	if (document.querySelector("#linear").checked) {
-		selected = document.querySelector("#linear").value;
-	}
-
-	if (document.querySelector("#quadratic").checked) {
-	  selected = document.querySelector("#quadratic").value;
-	}
-
-	if (document.querySelector("#cubic").checked) {
-	  selected = document.querySelector("#cubic").value;
-	}
 
 	const color = document.querySelector("#plot_color").value;
+	// finish user-input
 
 	const formular = new URLSearchParams(); // Vytvoríme štruktúru, ktorá bude reprezentovať formulár
 	formular.append('selected', selected); // Pridáme tam naše hodnoty

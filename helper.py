@@ -1,6 +1,7 @@
 from typing import List, Tuple, Callable
-from io import BytesIO
 from flask import send_file
+from io import BytesIO
+
 
 def hex2dec(hex_num: str) -> int:
 	"""
@@ -39,14 +40,14 @@ def hexColor(color: str) -> Tuple:
 
 	return (r, g, b)
 
-def serve_pil_image(img) -> Callable:
-	"""
-	Allows to save PIL image object to a
-	virtual file in memory and then return
-	it as a HTTP response
-	"""
+def serve_img(img):
+    """
+    Allows to save PIL image object to a
+    virtual file in memory and then return
+    it as a HTTP response
+    """
 
-	img_io = BytesIO()
-	img.save(img_io, 'PNG', quality=70)
-	img_io.seek(0)
-	return send_file(img_io, mimetype='image/png')
+    img_io = BytesIO()
+    img.savefig(img_io)
+    img_io.seek(0)
+    return send_file(img_io, mimetype='image/png')
