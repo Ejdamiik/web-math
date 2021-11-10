@@ -45,7 +45,7 @@ function handleSubmit(e) {
 				function(result){
 
 					const converted = replaceLineBreaksWithHTML(result);
-					document.querySelector("#output").innerHTML = converted;
+					document.querySelector("#output-relations").innerHTML = converted;
 			})
 		})
 }

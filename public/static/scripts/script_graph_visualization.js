@@ -26,7 +26,7 @@ function get_graph(e) {
 	fetch(url, {method: method, body: formular}) // Urobíme HTTP požiadavku na náš server POST /render a formularom v tele požiadavky 
 		.then((res) => res.blob()) // Dostali sme binárne dáta (blob)
 		.then((image) => {
-			document.querySelector("#output").src = URL.createObjectURL(image); // Nastavíme src našeho <img> na načítaný obrázok
+			document.querySelector("#output-plot").src = URL.createObjectURL(image); // Nastavíme src našeho <img> na načítaný obrázok
 		})
 	/*setTimeout(function(){
 		scroll("output")

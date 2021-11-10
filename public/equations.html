@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-		<title>Work with relations</title>
+		<title>Equations</title>
 
 		<link rel="stylesheet" type="text/css" href="/static/styles/global.css">
 
@@ -16,12 +16,20 @@
 				<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/images/home.png" width = 50px></button>
 			</form>
 
-
-			<h1 class = "Main-heading">Information about application</h1>
+			<h1 class = "Main-heading">Equations</h1>
 
 		</header>
 
-		<p>Update</p>
+		<div class = "Buttons">
+			<form method="GET" action="/linear">
+				<button onclick='{{Flask.redirect(url_for(system))}}'>Linear system</button>
+			</form>
+
+			<form method="GET" action="/eq_solving">
+				<button onclick='{{Flask.redirect(url_for(eq_solving))}}'>Equation solving</button>
+			</form>
+
+		</div>
 
 
 		<footer>
