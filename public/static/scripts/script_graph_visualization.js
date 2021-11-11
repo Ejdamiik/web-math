@@ -1,14 +1,29 @@
+function add_spaces(formula) {
+	let formatted = "";
+
+	for (let i = 0; i < formula.length; i++) {
+
+		formatted = formatted + formula.charAt(i);
+		formatted = formatted + " "
+	}
+
+	return formatted.slice(0, -1)
+}
+
+
 // handleSubmit je funkcia, ktorá sa spustí keď sa bude mať odoslať náš formulár
 function get_graph(e) {
 	e.preventDefault(); // zabrániť vstavenému odosielaniu v prehliadači
 
 	let selected = null;
 
-	const color = document.querySelector("#plot_color").value;
-	// finish user-input
+	unformatted = this.querySelector("#formula_entry").value;
+
+	const color = this.querySelector("#plot_color").value;
+	const formula = add_spaces(unformatted);
 
 	const formular = new URLSearchParams(); // Vytvoríme štruktúru, ktorá bude reprezentovať formulár
-	formular.append('selected', selected); // Pridáme tam naše hodnoty
+	formular.append('formula', formula); // Pridáme tam naše hodnoty
 	formular.append('color', color);
 
 	const url = this.action; // Nacitame povodnu URL zadanu vo formulari

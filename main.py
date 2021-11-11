@@ -68,17 +68,13 @@ def relations() -> str:
 
 
 
-
 #---------------------App-functions------------------------------------------#
 
 @app.route('/get_graph', methods=["post"])
 def get_graph():
-    """
-    Response for get_graph action
-    Return picture with wanted plot
-    """
 
-    plot = func_vis.get_figure()
+    formula = request.form.get('formula')
+    plot = func_vis.get_figure(formula)
 
     return helper.serve_img(plot)
 
@@ -98,9 +94,6 @@ def solve_relation() -> str:
 
 @app.route('/solve', methods=['post'])
 def solve() -> str:
-    """
-    Returns HTTP response for solve action (result of system)
-    """
 
     # Getting coefs from formular
     x1 = float(request.form.get('x1'))
