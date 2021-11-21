@@ -47,8 +47,6 @@ def eval_rpn(formula: str, variables: Dict[str, int]) -> int:
     rpn = get_postfix(formula)
     stack = []
 
-    print(rpn)
-
     for part in rpn.split(" "):
 
         if part in OPERATORS:

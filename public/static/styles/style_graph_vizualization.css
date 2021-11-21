@@ -2,6 +2,7 @@
 #output-plot{
 	background-color: black;
 	margin-bottom: 50px;
+	border:10px solid black;
 }
 
 #plot_color {

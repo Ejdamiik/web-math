@@ -11,10 +11,16 @@ def get_figure(formula: str):
 
     	y.append(formula_handle.eval_rpn(formula, {"x": value}))
 
+    ax = plt.axes()
+    ax.set_facecolor("#849488")
+
+    plt.axhline(0, color='black')
+    plt.axvline(0, color='black')
+
+    plt.title(f"Latest: {formula}")
+    plt.xlabel("x")
+    plt.ylabel("y")
+
     plt.plot(x, y)
-    plt.title("Identity Function")
-    plt.xlabel("Values of x")
-    plt.ylabel("Values of y")
-    plt.draw()
 
     return plt.gcf()
