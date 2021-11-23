@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import graph_back.formula_handle as formula_handle
 
-def get_figure(formula: str):
+def get_figure(formula: str, color: str):
 
     x = np.arange(-11, 11, 1)
 
@@ -21,6 +21,6 @@ def get_figure(formula: str):
     plt.xlabel("x")
     plt.ylabel("y")
 
-    plt.plot(x, y)
+    plt.plot(x, y, color = color)
 
     return plt.gcf()

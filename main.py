@@ -74,7 +74,9 @@ def relations() -> str:
 def get_graph():
 
     formula = request.form.get('formula')
-    plot = func_vis.get_figure(formula)
+    color = request.form.get('color')
+
+    plot = func_vis.get_figure(formula, color)
 
     return helper.serve_img(plot)
 
