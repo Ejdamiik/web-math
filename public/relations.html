@@ -17,34 +17,47 @@
 			</form>
 
 
-			<h1 class = "Main-heading">Relations - properties and closures</h1>
+			<h1>Relations - properties and closures</h1>
+			<hr>
 
 		</header>
 
 		<form class = "input_field" id = "relations_form" method = "POST" action = "/solve_relation">
 
-			<p>Enter a base set:</p>
-			<p>{<input type="text" id="base_entry" name="base_entry" class = "inputs">}</p>
+			<section id = "relation_input_sec">
 
-			<p>Enter a relation:</p>
-			<p>{<input type="text" id="relation_entry" name="relation_entry" class = "inputs">}</p>
+				<fieldset>
+					<legend>Base set:</legend>
+					<p>{<input type="text" id="base_entry" name="base_entry" class = "inputs" placeholder = "a, b, c">}</p>
+				</fieldset>
 
-			<p><u>Closures</u></p>
+				<fieldset>
+					<legend>Relation:</legend>
+					<p>{<input type="text" id="relation_entry" name="relation_entry" class = "inputs" placeholder = "(a, b), (b, c)">}</p>
+				</fieldset>
 
-			<br>
+			</section>
 
-			<div>
-				<input type="checkbox" id="reflexive_closure" name="reflexive_closure" value="reflexive_closure">
-				<label for="reflexive_closure"> Reflexive</label>
-				<input type="checkbox" id="symetric_closure" name="symetric_closure" value="symetric_closure">
-				<label for="symetric_closure">Symetric</label>
-				<input type="checkbox" id="transitive_closure" name="transitive_closure" value="transitive_closure">
-				<label for="transitive_closure">Transitive</label>
-			</div>
+			<section>
+				<fieldset>
+					<legend>Closures</legend>						
+					<input type="checkbox" id="reflexive_closure" name="reflexive_closure" value="reflexive_closure">
+					<label for="reflexive_closure"> Reflexive</label>
 
-			<br>
+					<br>
 
-			<button id = "Submit-button"><img src = "/static/images/eval.png" width = 80px></button>
+					<input type="checkbox" id="symetric_closure" name="symetric_closure" value="symetric_closure">
+					<label for="symetric_closure">Symetric</label>
+
+					<br>
+
+					<input type="checkbox" id="transitive_closure" name="transitive_closure" value="transitive_closure">
+					<label for="transitive_closure">Transitive</label>
+				</fieldset>
+
+				<button id = "Submit-button"><img src = "/static/images/eval.png" width = 130px></button>
+
+			</section>
 
 		</form>
 

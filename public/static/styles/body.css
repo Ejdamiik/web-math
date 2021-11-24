@@ -5,6 +5,11 @@ body {
 	background-color: #849488;
 }
 
+h1{
+	text-align: center;
+	font-size: 50px;
+	color: black;
+}
 
 form {
 	margin-top: 50px;
@@ -13,4 +18,8 @@ form {
 
 a {
 	align-items: center;
+}
+
+hr {
+	border: 2px dashed black;
 }

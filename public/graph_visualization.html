@@ -9,11 +9,15 @@
 
 	<body>
 
-		<form method="GET" action="/">
-			<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/images/home.png" width = 50px></button>
-		</form>
+		<header>
+			<form method="GET" action="/">
+				<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/images/home.png" width = 50px></button>
+			</form>
 
-		<h1 class = "Main-heading"> Function visualization </h1>
+			<h1> Function visualization </h1>
+			<hr>
+
+		</header>
 
 		
 		<form id = "option_panel" class = "options" method="POST" action="/get_graph">

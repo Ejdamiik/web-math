@@ -1,0 +1,24 @@
+#main-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    font-size: 23px;
+    text-align: center;
+}
+
+#intro{
+    display: block;
+    align-items: center;
+    text-align: justify;
+}
+#feedback{
+    font-size: 18px;
+}
+
+.info-ul{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+}

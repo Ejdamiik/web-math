@@ -1,0 +1,14 @@
+.Buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-buts{
+    margin: 50px;
+}
+
+#nav-foot {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+}

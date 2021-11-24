@@ -16,23 +16,24 @@
 				<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/images/home.png" width = 50px></button>
 			</form>
 
-			<h1 class = "Main-heading">Equations</h1>
+			<h1>Equations</h1>
+			<hr>
 
 		</header>
 
-		<div class = "Buttons">
-			<form method="GET" action="/linear">
-				<button onclick='{{Flask.redirect(url_for(system))}}'>Linear system</button>
+		<section class = "Buttons">
+			<form class = "nav-buts" method="GET" action="/linear">
+				<button onclick='{{Flask.redirect(url_for(system))}}'><img src = "/static/images/linear-system.png" width = 100px></button>
 			</form>
 
-			<form method="GET" action="/eq_solving">
-				<button onclick='{{Flask.redirect(url_for(eq_solving))}}'>Equation solving</button>
+			<form class = "nav-buts" method="GET" action="/eq_solving">
+				<button onclick='{{Flask.redirect(url_for(eq_solving))}}'><img src = "/static/images/equation-solving.png" width = 100px></button>
 			</form>
 
-		</div>
+		</section>
 
 
-		<footer>
+		<footer id = "nav-foot">
 			<a href = "https://github.com/Ejdamiik" target="_blank"><img src = "/static/images/github.png" width = "100px"></a>
 		</footer>
 
