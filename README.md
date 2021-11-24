@@ -20,3 +20,5 @@ Used libraries (3rd party):
 - [Matplotlib](https://matplotlib.org/) - Plot visualization
 - Typing - Type annotations
 - Numpy - numerical calculations
+
+![](https://github.com/Ejdamiik/web-math/blob/main/showcase_pics/show1.png)
