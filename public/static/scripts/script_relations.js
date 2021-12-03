@@ -8,8 +8,18 @@ function handleSubmit(e) {
 
 	e.preventDefault();
 
+	let error_msg = "";
+
 	const base = this.querySelector("#base_entry").value;
 	const relation = this.querySelector("#relation_entry").value;
+
+	if (base == ""){
+		error_msg = "Please enter a base-set!";
+	}
+
+	if (relation == ""){
+		error_msg = "Please enter a relation!";
+	}
 
 	let closures = [];
 
@@ -18,12 +28,21 @@ function handleSubmit(e) {
 		closures.push("reflexive");
 	}
 	
-	if (this.querySelector("#symetric_closure").checked) {
+	else if (this.querySelector("#symetric_closure").checked) {
 		closures.push("symetric");
 	}
 
-	if (this.querySelector("#transitive_closure").checked) {
+	else if (this.querySelector("#transitive_closure").checked) {
 		closures.push("transitive");
+	}
+
+	else {
+		error_msg = "Pick at least one closure please!";
+	}
+
+	if (error_msg != ""){
+		document.querySelector("#output-relations").innerHTML = error_msg;
+		return null;
 	}
 
 	const formular = new URLSearchParams();

@@ -19,6 +19,15 @@ function get_graph(e) {
 
 	unformatted = this.querySelector("#formula_entry").value;
 
+	if (unformatted == ""){
+		document.querySelector("#error-report").innerHTML = "Please enter a formula!";
+		return null;
+	}
+
+	else{
+		document.querySelector("#error-report").innerHTML = "";
+	}
+
 	const color = this.querySelector("#plot_color").value;
 	const formula = add_spaces(unformatted);
 
