@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Work with relations</title>
+
+		<link rel="stylesheet" type="text/css" href="/static/styles/global.css">
+
+		<link rel="icon" href="/static/images/calculator.png">
+	</head>
+
+	<body>
+		<header>
+
+			<form method="GET" action="/">
+				<button onclick='{{Flask.redirect(url_for())}}'><img src = "/static/images/home.png" width = 50px></button>
+			</form>
+
+
+			<h1>Matrix operations</h1>
+			<hr>
+
+		</header>
+
+		<form id = "get_matrix_form" method = "POST" action = "/get_matrices">
+
+			<button id = "get-button">Get excercise</button>
+
+		</form>
+
+		<section id = "matrix-excercise">
+			<p id = "m1"></p>
+			<p id = "m2"></p>
+		</section>
+
+		<form id = "submit-solution-matrix" method = "POST" action = "/get_matrices">
+
+			<textarea id = "user-input-matrix"></textarea>
+			<button id = "submit-button">Check</button>
+
+		</form>
+
+		<footer>
+			<a href = "https://github.com/Ejdamiik" target="_blank"><img src = "/static/images/github.png" width = "100px"></a>
+		</footer>
+
+		<script type="text/javascript" src="/static/scripts/script_matrix.js" ></script>
+
+	</body>
+</html>

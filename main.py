@@ -1,7 +1,8 @@
-from flask import Flask, request, send_from_directory, render_template
+from flask import Flask, request, send_from_directory, render_template, jsonify
 from linear_back.determinant import Determinant
 import graph_back.func_vis as func_vis
 import relations_back.out as o
+import matrix_back.matrix_mul as matrix_mul
 from PIL import Image
 from typing import Tuple, Callable
 import helper
@@ -33,10 +34,17 @@ def info() -> str:
 
     return send_from_directory('public', 'info.html')
 
+
 @app.route('/eq_solving', methods=['post', "get"])
 def eq_solving() -> str:
 
     return send_from_directory('public', 'equation_solving.html')
+
+
+@app.route('/matrix', methods=['post', "get"])
+def matrix() -> str:
+
+    return send_from_directory('public', 'matrix.html')
 
 
 @app.route('/equations', methods=['post', "get"])
@@ -79,6 +87,29 @@ def get_graph():
     plot = func_vis.get_figure(formula, color)
 
     return helper.serve_img(plot)
+
+
+@app.route('/get_matrices', methods=["get", "post"])
+def get_matrices() -> str:
+
+    m1, m2 = matrix_mul.create_random_multiply_duo(3, (-6, 6))
+
+    m1s = matrix_mul.stringify_matrix(m1)
+    m2s = matrix_mul.stringify_matrix(m2)
+
+    for i in range(len(m1s)):
+        m1s[i] = m1s[i].replace(" ", "&nbsp;")
+    for i in range(len(m2s)):
+        m2s[i] = m2s[i].replace(" ", "&nbsp;")
+    # Convert spaces to space equivalent in HTML
+
+    return jsonify(m1="<br>".join(m1s), m2="<br>".join(m2s))
+
+
+@app.route('/solve_matrix_mul', methods=["post"])
+def solve_matrix_mul():
+
+    return "Server response"
 
 
 @app.route('/solve_relation', methods=["get", 'post'])
